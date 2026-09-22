@@ -1,36 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos de listas en HTML</title>
+<!DOCTYPE html> <!--Señala al navegador que es un documento HTML-->
+<html lang="en"> <!--Incica el idioma del documento-->
+<head> <!--Estructura de encabezado-->
+    <meta charset="UTF-8"> <!--Evita errores en los caracteres de la pagina que no son reconocidos-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Ajusta el documento al dispocitivo que se visualice-->
+    <title>Tipos de listas en HTML</title> <!--Este sera el titulo que aparecera en la pestaña de navegación-->
 </head>
-<body>
-    <h1>Tipos de listas</h1>
-    <h2>Listas ordenadas</h2>
+<body> <!--Cuerpo del documento (Todo lo que se mostrara)-->
+    <h1>Tipos de listas</h1> <!--Titulo principal indicando el tema del documento-->
+    <h2>Listas ordenadas</h2> <!--Subtitulo para listas ordenadas-->
     <p>Una lista ordenada es una serie de elementos los cuales 
         tendran una numeracion de acuerdo al numeros de elementos.
     </p>
-    <ol>
-        <li>Luna Arias </li>
+    <ol> <!--Etiqueta <ol> para crear una lista ordenada (numerada)-->
+        <li>Luna Arias </li> <!--Etiqueta <li> define cada elemento de la lista-->
         <li>Franco Andrea</li>
         <li>Granados Evelyn</li>
     </ol>
-    <h2>Listas no ordenadas</h2>
+    <h2>Listas no ordenadas</h2> <!--Subtitulo para listas no ordenadas-->
     <p>Las listas no ordenadas no utilizan ninguna numeracion delante 
         de cada item sino un pequeño elemento grafico
     </p>
-    <ul>
+    <ul> <!--Etiqueta <ul> para crear una lista no ordenada (con viñetas)-->
         <li>C</li>
         <li>C++</li>
         <li>Python</li>
     </ul>
-    <h2>Lista de definiciones</h2>
+    <h2>Lista de definiciones</h2> <!--Subtitulo para listas de definiciones-->
     <p>Se utiliza para asociar un termino y la definicion del mismo</p>
-    <dl>
-        <!-- Primer termino-->
+    <dl> <!--Etiqueta <dl> para definir una lista de terminos y conceptos-->
+        <!-- Primer termino con etiqueta <dt>-->
         <dt>C++</dt>
-        <!-- Definicion del primer termino-->
+        <!-- Definicion del primer termino con etiqueta <dd>-->
         <dd>
             Es un lenguaje de programacion, diseñado a mediados de los años
             1980 como extension del lenguaje de programacion C.
@@ -51,10 +51,11 @@
             al lenguaje de programacion C.
         </dd>
     </dl>
-    <h2>Listas anidadas</h2>
+    <h2>Listas anidadas</h2> <!--Subtitulo para listas dentro de otras listas-->
     <p>En HTML nos permite insertar una lista dentro de otra lista, se pueden
         anidar diferentes tipos de lista de acuerdo al requerimiento
     </p>
+    <!--Uso de lista ordenada <ol> que contiene listas no ordenadas <ul> en su interior-->
     <ol>
         <li>Argentina
             <ul>
