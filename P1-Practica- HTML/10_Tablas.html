@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!--Señala al navegador que es un documento HTML-->
+<html lang="en"> <!--Incica el idioma del documento-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tablas en HTML</title>
+<head> <!--Estructura de encabezado-->
+    <meta charset="UTF-8"> <!--Evita errores en los caracteres de la pagina que no son reconocidos-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Ajusta el documento al dispocitivo que se visualice-->
+    <title>Tablas en HTML</title> <!--Este sera el titulo que aparecera en la pestaña de navegación-->
 </head>
 
-<body>
-    <h1>Tipos de tablas</h1>
+<body> <!--Cuerpo del documento (Todo lo que se mostrara)-->
+    <h1>Tipos de tablas</h1> <!--Titulo principal indicando el tema del documento-->
     <p>El objetivo fundamental de las tablas en HTML sera
         mostrar una serie de datos en forma ordenada,
         organizado en filas y columnas
@@ -31,10 +31,11 @@
             dentro del elemento tr
         </dd>
     </dl>
-    <h2>Ejemplo</h2>
+    <h2>Ejemplo</h2> <!--Subtitulo para la tabla basica-->
+    <!--Etiqueta <table> crea una tabla; border="1" asigna borde a las celdas-->
     <table border="1">
-        <tr>
-            <td>Ciudad de Mexico</td>
+        <tr> <!--Etiqueta <tr> para definir una fila de la tabla-->
+            <td>Ciudad de Mexico</td> <!--Etiqueta <td> para definir una celda de datos-->
             <td>9.2 millones</td>
         </tr>
         <tr>
@@ -46,7 +47,7 @@
             <td>3.9 millones</td>
         </tr>
     </table>
-    <h2>Tabla con encabezado</h2>
+    <h2>Tabla con encabezado</h2> <!--Subtitulo para tabla con encabezados-->
     <p>La caracteristicas de esta tabla es que se le agrega a las celdas 
         el encabezado correspondiente, esto solo aplicaria a la primera
         fila de la tabla con la etiqueta <em>th</em>, las demas filas
@@ -54,7 +55,7 @@
     </p>
     <table border="1">
         <tr>
-            <th>Ciudad</th>
+            <th>Ciudad</th> <!--Etiqueta <th> para celdas de encabezado en la tabla-->
             <th>Cantidad de habitantes</th>
         </tr>
         <tr>
@@ -70,11 +71,12 @@
             <td>3.9 millones</td>
         </tr>
     </table>
-    <h2>Tabla con titulo</h2>
+    <h2>Tabla con titulo</h2> <!--Subtitulo para tabla con titulo/leyenda-->
     <p>Para insertar un titulo a la tabla debemos incorporar el elemento caption 
         inmediatamente despues de abrir la etiqueta <em>table</em>.
     </p>
     <table border="1">
+        <!--Etiqueta <caption> define un titulo o descripcion para la tabla-->
         <caption>Poblacion de las ciudades mas concurridas de Mexico</caption>
         <tr>
             <th>Ciudad</th>
