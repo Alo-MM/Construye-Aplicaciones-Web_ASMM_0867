@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 15px;
+    background: #a3a4a5;
+    color: #333;
+}
+
+header h1 {
+    padding: 30px 0;
+    margin: 0 0 25px 0;
+    font-family: "Times New Roman";
+    font-size: 80px;
+    letter-spacing: 1px;
+}
+
+nav {
+    margin-bottom: 15px;
+}
+
+nav a {
+    margin: 0 10px;
+    padding: 6px 12px;
+    color: #2f5d8b;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+
+    &:hover {
+        background: #ecf0f1;
+    }
+}
+
+.btn-contacto {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+
+    &:hover {
+        background: #c0392b;
+    }
+}
+
+table {
+    margin: 10px 50px;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+th,
+td {
+    padding: 12px;
+}
+
+th {
+    background: #2c3e50;
+    color: #fff;
+}
+
+td {
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.volver {
+    margin-bottom: 15px;
+}
+
+.volver a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tarjeta-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-form h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin: 12px 0 4px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.acciones {
+    margin-top: 18px;
+    text-align: center;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 0 4px;
+    color: #fff;
+}
+
+input[type="submit"] {
+    background: #2c3e50;
+}
+
+input[type="reset"] {
+    background: #e74c3c;
+}
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+}
