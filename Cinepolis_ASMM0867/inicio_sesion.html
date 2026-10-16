@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cinepolis - Inicio de Sesión</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #aad7ea;
+        }
+        header {
+            background-color: #4474c2;
+            padding: 10px;
+            color: white;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        form {
+            margin: 20px;
+            width: 200px;
+            padding: 60px;
+            border: 1px solid #989797;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4474c2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #3035bc;
+        }
+		footer{
+			background-color: #4474c2;
+			padding: 25px;
+			margin-top: 45px;
+            Color: white;   
+		}
+    </style>
+</head>
+<body>
+    
+    <center> 
+    <header>
+        <a href="index.html" >Volver a la página principal</a>
+        <h1>Inicio de Sesión</h1>
+    </header>
+    <form>
+        <label for="correo"><strong>Correo electrónico:</strong></label>
+        <input type="email" id="correo" name="correo" required>
+        <br>
+
+        <label for="apellidos"><strong>Apellidos:</strong></label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        <br>
+
+        <label for="nombre"><strong>Nombre:</strong></label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+
+        <label for="fecha"><strong>Fecha de nacimiento:</strong></label>
+        <input type="date" id="fecha" name="fecha" required>
+        <br>
+
+        <label for="sexo"><strong>Sexo:</strong></label>
+        <select id="sexo" name="sexo" required>
+            <option value="">Seleccionar</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Prefiero no decirlo</option>
+        </select>
+        <br>
+
+        <label for="password"><strong>Código postal:</strong></label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <label for="numero"><strong>Número de celular a 10 dígitos:</strong></label>
+        <input type="tel" id="numero" name="numero"maxlength="10" minlength="10" pattern="[0-9]{10}" required>
+        <br><br>
+        <input type="submit" value="Iniciar sesión">
+    </form>
+	<footer align="center">Martínez Monárrez ALondra Sofia<br>5°J<br>24308051280867</footer>
+</center>
+</body>
