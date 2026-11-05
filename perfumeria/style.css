@@ -1,0 +1,498 @@
+:root {
+    /* Paleta Rojo & Beige */
+    --color-rojo-principal: #8c1d29;
+    /* Rojo vino / borgoña elegante */
+    --color-rojo-oscuro: #69111c;
+    /* Rojo profundo para contrastes */
+    --color-rojo-vivo: #a62432;
+    /* Rojo vivo para hover y acentos */
+    --color-rojo-suave: #faeaeb;
+    /* Tinte rojo muy suave para detalles */
+
+    --color-beige-fondo: #fbf7f2;
+    /* Beige crema de fondo */
+    --color-beige-tarjeta: #ffffff;
+    /* Blanco puro para tarjetas */
+    --color-beige-claro: #f5ede4;
+    /* Beige suave para encabezados y filas */
+    --color-beige-medio: #e6dacb;
+    /* Beige para bordes y divisiones */
+    --color-beige-dorado: #c8b29b;
+    /* Beige dorado cálido */
+
+    --color-texto-principal: #2d2625;
+    /* Café muy oscuro / carbón para alta legibilidad */
+    --color-texto-secundario: #6e6462;
+    /* Texto atenuado */
+    --color-blanco: #ffffff;
+
+    /* Tipografías */
+    --fuente-titulos: 'Playfair Display', Georgia, serif;
+    --fuente-cuerpo: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Sombras y Bordes */
+    --radio-sm: 6px;
+    --radio-md: 10px;
+    --radio-lg: 16px;
+    --sombra-suave: 0 4px 15px rgba(140, 29, 41, 0.06);
+    --sombra-hover: 0 8px 24px rgba(140, 29, 41, 0.12);
+    --transicion: all 0.3s ease;
+}
+
+/* ----------------- Reset Básico ----------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-beige-fondo);
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-cuerpo);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ----------------- Encabezado (Header) ----------------- */
+header {
+    background: linear-gradient(135deg, var(--color-rojo-oscuro) 0%, var(--color-rojo-principal) 100%);
+    text-align: center;
+    padding: 38px 20px 30px;
+    box-shadow: 0 4px 12px rgba(105, 17, 28, 0.25);
+    border-bottom: 3px solid var(--color-beige-dorado);
+}
+
+header h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-beige-claro);
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ----------------- Barra de Navegación ----------------- */
+nav {
+    background-color: var(--color-beige-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--color-beige-medio);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--sombra-suave);
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--color-rojo-oscuro);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 8px 18px;
+    border-radius: 25px;
+    transition: var(--transicion);
+    letter-spacing: 0.5px;
+}
+
+nav a:hover,
+nav a.activo {
+    background-color: var(--color-rojo-principal);
+    color: var(--color-blanco);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(140, 29, 41, 0.2);
+}
+
+/* ----------------- Secciones y Títulos ----------------- */
+section {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-rojo-principal);
+    font-size: 30px;
+    margin-bottom: 22px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-rojo-principal), var(--color-beige-dorado));
+    border-radius: 2px;
+}
+
+/* ----------------- Tablas de Perfumes ----------------- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: var(--color-beige-tarjeta);
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid var(--color-beige-medio);
+    margin-bottom: 20px;
+}
+
+thead th {
+    background: linear-gradient(to right, var(--color-rojo-principal), var(--color-rojo-oscuro));
+    color: var(--color-beige-claro);
+    font-family: var(--fuente-titulos);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 14px 16px;
+    text-align: left;
+}
+
+tbody tr {
+    transition: var(--transicion);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fdfaf7;
+    /* Tono beige sutil alternado */
+}
+
+tbody tr:hover {
+    background-color: var(--color-rojo-suave);
+}
+
+tbody td {
+    padding: 14px 16px;
+    vertical-align: middle;
+    color: var(--color-texto-principal);
+    border-bottom: 1px solid var(--color-beige-medio);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Columna de imagen */
+table img {
+    border-radius: var(--radio-sm);
+    object-fit: cover;
+    border: 2px solid var(--color-beige-medio);
+    background-color: var(--color-beige-claro);
+    display: block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: var(--transicion);
+}
+
+table img:hover {
+    transform: scale(1.05);
+    border-color: var(--color-rojo-principal);
+}
+
+/* Botón Comprar en tabla */
+table button {
+    background: linear-gradient(135deg, var(--color-rojo-principal), var(--color-rojo-vivo));
+    color: var(--color-blanco);
+    border: none;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-family: var(--fuente-cuerpo);
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transicion);
+    box-shadow: 0 3px 8px rgba(140, 29, 41, 0.25);
+}
+
+table button:hover {
+    background: linear-gradient(135deg, var(--color-rojo-vivo), var(--color-rojo-oscuro));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(140, 29, 41, 0.35);
+}
+
+table button:active {
+    transform: translateY(0);
+}
+
+/* ----------------- Texto de Presentación Clásica (Inicio) ----------------- */
+.seccion-intro {
+    max-width: 850px;
+    margin: 45px auto 20px;
+}
+
+.caja-intro {
+    background: linear-gradient(180deg, #ffe1e1 0%, #fdfaf6 100%);
+    border: 1px solid var(--color-beige-medio);
+    border-top: 3px solid var(--color-rojo-principal);
+    border-bottom: 3px solid var(--color-rojo-principal);
+    border-radius: var(--radio-md);
+    padding: 35px 42px;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    position: relative;
+    transition: var(--transicion);
+}
+
+.caja-intro:hover {
+    box-shadow: var(--sombra-hover);
+    border-color: var(--color-beige-dorado);
+}
+
+.caja-intro::before {
+    content: "“";
+    font-family: var(--fuente-titulos);
+    color: var(--color-beige-dorado);
+    line-height: 0.8;
+    display: block;
+    margin-bottom: 8px;
+    opacity: 0.7;
+    text-align: center;
+}
+
+.caja-intro p {
+    font-family: var(--fuente-cuerpo);
+    font-size: 21.5px;
+    line-height: 1.95;
+    color: var(--color-texto-principal);
+    text-align: justify;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.caja-intro p strong {
+    color: var(--color-rojo-principal);
+    font-weight: 600;
+}
+
+/* ----------------- Formularios (Registro y Login) ----------------- */
+#registro {
+    margin-top: 50px;
+    padding: 10px 20px 40px;
+}
+
+.contenedor-formularios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.columna-formulario {
+    background-color: var(--color-beige-tarjeta);
+    border-radius: var(--radio-lg);
+    padding: 32px 28px;
+    border: 1px solid var(--color-beige-medio);
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion);
+}
+
+.columna-formulario:hover {
+    box-shadow: var(--sombra-hover);
+    border-color: var(--color-beige-dorado);
+}
+
+.columna-formulario h2 {
+    font-size: 26px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.columna-formulario h2::after {
+    left: 0;
+    transform: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-texto-principal);
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 14px;
+    background-color: #faf7f2;
+    border: 1.5px solid var(--color-beige-medio);
+    border-radius: var(--radio-sm);
+    font-family: var(--fuente-cuerpo);
+    font-size: 15px;
+    color: var(--color-texto-principal);
+    transition: var(--transicion);
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+    border-color: var(--color-rojo-principal);
+    background-color: var(--color-blanco);
+    box-shadow: 0 0 0 3px rgba(140, 29, 41, 0.12);
+}
+
+input::placeholder {
+    color: #a49997;
+    font-size: 14px;
+}
+
+/* Botones de formulario */
+.columna-formulario button[type="submit"] {
+    background: linear-gradient(135deg, var(--color-rojo-principal), var(--color-rojo-vivo));
+    color: var(--color-blanco);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-family: var(--fuente-cuerpo);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transicion);
+    box-shadow: 0 4px 12px rgba(140, 29, 41, 0.25);
+    margin-top: 8px;
+}
+
+.columna-formulario button[type="submit"]:hover {
+    background: linear-gradient(135deg, var(--color-rojo-vivo), var(--color-rojo-oscuro));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(140, 29, 41, 0.35);
+}
+
+.columna-formulario button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ----------------- Pie de Página (Footer) ----------------- */
+footer {
+    background-color: var(--color-beige-claro);
+    color: var(--color-rojo-oscuro);
+    border-top: 2px solid var(--color-beige-medio);
+    text-align: center;
+    padding: 26px 20px;
+    margin-top: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8;
+    box-shadow: 0 -2px 10px rgba(140, 29, 41, 0.04);
+}
+
+/* ----------------- Responsividad ----------------- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    /* Scroll horizontal en tablas para pantallas pequeñas */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .columna-formulario {
+        padding: 24px 18px;
+    }
+
+    .caja-intro {
+        padding: 25px 20px;
+    }
+
+    .barra-bienvenida {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 12px 15px;
+    }
+}
+
+/* ----------------- Barra de Bienvenida y Sesión ----------------- */
+.barra-bienvenida {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-rojo-suave);
+    border-bottom: 2px solid var(--color-beige-medio);
+    padding: 12px 35px;
+    box-shadow: var(--sombra-suave);
+}
+
+.bienvenida-texto {
+    color: var(--color-rojo-oscuro);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.bienvenida-texto strong {
+    color: var(--color-rojo-principal);
+    font-family: var(--fuente-titulos);
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.btn-cerrar-sesion {
+    background-color: var(--color-rojo-principal);
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: var(--radio-sm);
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transicion);
+    box-shadow: 0 2px 6px rgba(140, 29, 41, 0.2);
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: var(--color-rojo-vivo);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(140, 29, 41, 0.3);
+}
+
+.mensaje-error {
+    background-color: #fdf2f2;
+    color: #991b1b;
+    border-left: 4px solid var(--color-rojo-vivo);
+    padding: 12px 20px;
+    margin: 15px auto;
+    max-width: 900px;
+    border-radius: var(--radio-sm);
+    font-weight: 500;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+}
