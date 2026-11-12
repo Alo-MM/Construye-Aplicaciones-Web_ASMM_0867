@@ -5,6 +5,22 @@ include("conexion.php");
 // Consultar los productos de la tabla hombres
 $consulta = "SELECT * FROM hombres";
 $resultado = mysqli_query($conexion, $consulta);
+
+// Contar productos en el carrito
+$total_carrito = 0;
+if (isset($_SESSION['carrito'])) {
+    if (is_array($_SESSION['carrito'])) {
+        foreach ($_SESSION['carrito'] as $producto) {
+            if (is_array($producto) && isset($producto['cantidad'])) {
+                $total_carrito += $producto['cantidad'];
+            } else {
+                $total_carrito++;
+            }
+        }
+    } else {
+        $total_carrito = (int)$_SESSION['carrito'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,6 +43,10 @@ $resultado = mysqli_query($conexion, $consulta);
         <a href="hombres.php" class="activo">Hombre</a>
         <a href="bebes.php">Niños</a>
         <a href="registro_inicio.php">Cuenta</a>
+        <a href="carrito.php" class="btn-carrito" title="Ver Carrito de Compras">
+            <img src="carrito.png" alt="Carrito">
+            Carrito<?php if ($total_carrito > 0) { echo " ($total_carrito)"; } ?>
+        </a>
     </nav>
 
     <!-- Barra de Bienvenida y Botón de Cerrar Sesión -->
@@ -66,7 +86,15 @@ $resultado = mysqli_query($conexion, $consulta);
                             <td><?php echo htmlspecialchars($fila['marca']); ?></td>
                             <td>$<?php echo number_format($fila['precio'], 2); ?> MXN</td>
                             <td>
-                                <button type="button">Comprar</button>
+                                <form action="carrito.php" method="POST">
+                                    <input type="hidden" name="accion" value="agregar">
+                                    <input type="hidden" name="origen" value="hombres.php">
+                                    <input type="hidden" name="perfume" value="<?php echo htmlspecialchars($fila['info']); ?>">
+                                    <input type="hidden" name="marca" value="<?php echo htmlspecialchars($fila['marca']); ?>">
+                                    <input type="hidden" name="precio" value="<?php echo $fila['precio']; ?>">
+                                    <input type="hidden" name="imagen" value="<?php echo htmlspecialchars($ruta_imagen); ?>">
+                                    <button type="submit">Comprar</button>
+                                </form>
                             </td>
                         </tr>
                     <?php endwhile; ?>

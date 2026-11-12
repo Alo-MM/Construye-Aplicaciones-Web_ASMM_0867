@@ -9,6 +9,22 @@ if (isset($_GET['cerrar_sesion'])) {
     header("Location: index.php");
     exit();
 }
+
+// Contar productos en el carrito
+$total_carrito = 0;
+if (isset($_SESSION['carrito'])) {
+    if (is_array($_SESSION['carrito'])) {
+        foreach ($_SESSION['carrito'] as $producto) {
+            if (is_array($producto) && isset($producto['cantidad'])) {
+                $total_carrito += $producto['cantidad'];
+            } else {
+                $total_carrito++;
+            }
+        }
+    } else {
+        $total_carrito = (int)$_SESSION['carrito'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,6 +47,10 @@ if (isset($_GET['cerrar_sesion'])) {
         <a href="hombres.php">Hombre</a>
         <a href="bebes.php">Niños</a>
         <a href="registro_inicio.php">Cuenta</a>
+        <a href="carrito.php" class="btn-carrito" title="Ver Carrito de Compras">
+            <img src="carrito.png" alt="Carrito">
+            Carrito<?php if ($total_carrito > 0) { echo " ($total_carrito)"; } ?>
+        </a>
     </nav>
 
     <!-- Barra de Bienvenida y Botón de Cerrar Sesión -->
